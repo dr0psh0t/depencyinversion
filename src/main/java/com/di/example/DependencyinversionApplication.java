@@ -21,9 +21,11 @@ public class DependencyinversionApplication {
 		adminUser.setEmail("admin@gmail.com");
 		adminUser.setPasssword("adminpassword");
 
-		UserAuthenticator userAuthenticator = new UserAuthenticator(accountUser, adminUser);
+		UserAuthenticator userAuthenticator = new UserAuthenticator(accountUser);
 		userAuthenticator.authenticateUser();
-		userAuthenticator.authenticateAdmin();
+
+		UserAuthenticator adminAuthenticator = new UserAuthenticator(accountUser);
+		adminAuthenticator.authenticateUser();
 	}
 
 }

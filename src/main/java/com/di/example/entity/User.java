@@ -44,19 +44,3 @@ public abstract class User implements VerifiableUser {
 	@Column(name = "is_deleted")
 	private Boolean isDeleted;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

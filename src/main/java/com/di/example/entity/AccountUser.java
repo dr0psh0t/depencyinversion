@@ -25,25 +25,3 @@ public class AccountUser extends User {
 	@Column(name = "birth_date")
 	private LocalDate birthdate;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

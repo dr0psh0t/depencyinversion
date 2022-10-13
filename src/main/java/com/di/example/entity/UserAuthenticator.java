@@ -15,11 +15,11 @@ public class UserAuthenticator {
 		this.adminUser = adminUser;
 	}
 
-	public boolean isAccountUserAuthenticated() {
-		return true;
+	public void authenticateUser() {
+		accountUser.authenticate();
 	}
 
-	public boolean isAdminUserAuthenticated() {
-		return true;
+	public void authenticateAdmin() {
+		adminUser.authenticate();
 	}
 }

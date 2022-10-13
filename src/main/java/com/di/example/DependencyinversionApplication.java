@@ -22,9 +22,8 @@ public class DependencyinversionApplication {
 		adminUser.setPasssword("adminpassword");
 
 		UserAuthenticator userAuthenticator = new UserAuthenticator(accountUser, adminUser);
-
-		System.out.println(userAuthenticator.isAccountUserAuthenticated());
-		System.out.println(userAuthenticator.isAdminUserAuthenticated());
+		userAuthenticator.authenticateUser();
+		userAuthenticator.authenticateAdmin();
 	}
 
 }

@@ -21,4 +21,9 @@ public class AdminUser extends User {
 
 	@Column(name = "employee_rank", length = 64)
 	private String employeeRank;
+
+	@Override
+	public void authenticate() {
+		System.out.println("Hi "+email+" you are authenticated.");
+	}
 }

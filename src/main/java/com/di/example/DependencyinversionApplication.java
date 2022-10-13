@@ -24,7 +24,7 @@ public class DependencyinversionApplication {
 		UserAuthenticator userAuthenticator = new UserAuthenticator(accountUser);
 		userAuthenticator.authenticateUser();
 
-		UserAuthenticator adminAuthenticator = new UserAuthenticator(accountUser);
+		UserAuthenticator adminAuthenticator = new UserAuthenticator(adminUser);
 		adminAuthenticator.authenticateUser();
 	}
 

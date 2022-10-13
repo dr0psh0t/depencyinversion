@@ -19,6 +19,6 @@ public class AdminUser extends User {
 	@Column(name = "department", length = 64)
 	private String department;
 
-	@Column(name = "rank", length = 64)
-	private String rank;
+	@Column(name = "employee_rank", length = 64)
+	private String employeeRank;
 }

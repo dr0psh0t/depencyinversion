@@ -12,7 +12,7 @@ If lastname and department are set, No exceptions are thrown and accountUser qua
 output:  
 `Hi user@gmail.com you are authenticated as Account User.`
 
-If accountUser.setLastname("Dagondon") is commented but adminUser.setDepartment("Dev") is not, adminUser qualifies as AdminUser:
+If accountUser.setLastname("Dagondon") is commented or removed but adminUser.setDepartment("Dev") is not, NotAccountUserException is thrown and adminUser qualifies as AdminUser:
 
 `\\accountUser.setLastname("Dagondon");`  
 `adminUser.setDepartment("Dev");`

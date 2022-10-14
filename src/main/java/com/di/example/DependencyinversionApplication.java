@@ -23,7 +23,7 @@ public class DependencyinversionApplication {
 		adminUser.setEmail("admin@gmail.com");
 		adminUser.setPasssword("adminpassword");
 
-		accountUser.setLastname("Dagondon");
+		//accountUser.setLastname("Dagondon");
 		//adminUser.setDepartment("Dev");
 
 		try {

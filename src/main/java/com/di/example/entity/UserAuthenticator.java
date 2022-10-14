@@ -11,7 +11,7 @@ public class UserAuthenticator {
 		this.theUser = theUser;
 	}
 
-	public void authenticateUser() {
+	public void authenticateUser() throws NotAdminUserException, NotAccountUserException {
 		theUser.authenticate();
 	}
 }

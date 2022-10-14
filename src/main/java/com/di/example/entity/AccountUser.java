@@ -26,7 +26,12 @@ public class AccountUser extends User {
 	private LocalDate birthdate;
 
 	@Override
-	public void authenticate() {
-		System.out.println("Hi "+email+" you are authenticated.");
+	public void authenticate() throws NotAccountUserException {
+
+		if (lastname == null) {
+			throw new NotAccountUserException(email+" is not an Account User.");
+		}
+
+		System.out.println("Hi "+email+" you are authenticated as Account User.");
 	}
 }

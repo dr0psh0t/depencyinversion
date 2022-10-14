@@ -5,12 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.di.example.entity.AccountUser;
 import com.di.example.entity.AdminUser;
+import com.di.example.entity.NotAccountUserException;
+import com.di.example.entity.NotAdminUserException;
 import com.di.example.entity.UserAuthenticator;
 
 @SpringBootApplication
 public class DependencyinversionApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NotAdminUserException, NotAccountUserException {
 		SpringApplication.run(DependencyinversionApplication.class, args);
 
 		AccountUser accountUser = new AccountUser();
@@ -21,11 +23,22 @@ public class DependencyinversionApplication {
 		adminUser.setEmail("admin@gmail.com");
 		adminUser.setPasssword("adminpassword");
 
-		UserAuthenticator userAuthenticator = new UserAuthenticator(accountUser);
-		userAuthenticator.authenticateUser();
+		accountUser.setLastname("Dagondon");
+		//adminUser.setDepartment("Dev");
 
-		UserAuthenticator adminAuthenticator = new UserAuthenticator(adminUser);
-		adminAuthenticator.authenticateUser();
+		try {
+			UserAuthenticator userAuthenticator = new UserAuthenticator(accountUser);
+			userAuthenticator.authenticateUser();
+
+		} catch (NotAccountUserException e1) {
+
+			try {
+				UserAuthenticator adminAuthenticator = new UserAuthenticator(adminUser);
+				adminAuthenticator.authenticateUser();
+
+			} catch (NotAdminUserException e2) {
+				System.err.println(e2);
+			}
+		}
 	}
-
 }

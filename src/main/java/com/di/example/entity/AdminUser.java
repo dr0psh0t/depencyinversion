@@ -23,7 +23,12 @@ public class AdminUser extends User {
 	private String employeeRank;
 
 	@Override
-	public void authenticate() {
-		System.out.println("Hi "+email+" you are authenticated.");
+	public void authenticate() throws NotAdminUserException {
+
+		if (department == null) {
+			throw new NotAdminUserException(email+" is not an Admin User");
+		}
+
+		System.out.println("Hi "+email+" you are authenticated as Admin User.");
 	}
 }
